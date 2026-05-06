@@ -14,8 +14,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $phone = sanitize($_POST['phone'] ?? '');
     $address = sanitize($_POST['address'] ?? '');
 
-    if (empty($name) || empty($email) || empty($password)) {
-        $error = 'Name, email, and password are required.';
+    // ✅ UPDATED VALIDATION (added phone & address)
+    if (empty($name) || empty($email) || empty($password) || empty($phone) || empty($address)) {
+        $error = 'All fields are required.';
     } elseif (strlen($password) < 6) {
         $error = 'Password must be at least 6 characters.';
     } else {
@@ -27,11 +28,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $error = 'An account with this email already exists.';
         } else {
             $hash = hashPassword($password);
-            $stmt = $db->prepare("INSERT INTO users (name, email, password_hash, role, phone, address) VALUES (?, ?, 'customer', ?, ?, ?)");
-            $stmt->bind_param('sssss', $name, $email, $hash, $phone, $address);
-            // fix bind order
+
             $stmt = $db->prepare("INSERT INTO users (name, email, password_hash, role, phone, address) VALUES (?, ?, ?, 'customer', ?, ?)");
             $stmt->bind_param('sssss', $name, $email, $hash, $phone, $address);
+
             if ($stmt->execute()) {
                 $userId = $db->insert_id;
                 $_SESSION['user_id'] = $userId;
@@ -81,16 +81,18 @@ include 'includes/header.php';
           </button>
         </div>
       </div>
+
       <div class="grid-2">
         <div class="form-group">
-          <label class="form-label">Phone (optional)</label>
-          <input type="tel" name="phone" class="form-control" placeholder="+880 1700-000000" value="<?= htmlspecialchars($_POST['phone'] ?? '') ?>">
+          <label class="form-label">Phone *</label>
+          <input type="tel" name="phone" class="form-control" placeholder="+880 1700-000000" value="<?= htmlspecialchars($_POST['phone'] ?? '') ?>" required>
         </div>
         <div class="form-group">
-          <label class="form-label">Address (optional)</label>
-          <input type="text" name="address" class="form-control" placeholder="Your address" value="<?= htmlspecialchars($_POST['address'] ?? '') ?>">
+          <label class="form-label">Address *</label>
+          <input type="text" name="address" class="form-control" placeholder="Your address" value="<?= htmlspecialchars($_POST['address'] ?? '') ?>" required>
         </div>
       </div>
+
       <button type="submit" class="btn btn-primary w-100 btn-lg">Create Account</button>
     </form>
 

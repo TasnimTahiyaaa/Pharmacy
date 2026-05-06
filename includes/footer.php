@@ -13,20 +13,20 @@
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
-      <p>📍 123 Health Street, Dhaka 1000</p>
-      <p>📞 +880 1700-000000</p>
+      <p>📍 Tistar Gate, Tongi, Gazipur</p>
+      <p>📞 +8801934331367</p>
       <p>✉️ info@noorpharmacy.com</p>
     </div>
     <div class="footer-col">
       <h4>Opening Hours</h4>
-      <p>Sat–Thu: 8AM – 10PM</p>
-      <p>Friday: 2PM – 10PM</p>
+      <p>Sat–Fri: 8AM – 11PM</p>
+      
       <p style="color:var(--primary);font-weight:700;margin-top:8px">🟢 Open Now</p>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© <?= date('Y') ?> <span>Noor Pharmacy</span>. All rights reserved.</p>
-    <p>Group 7 | CSE 3105</p>
+    <p>Developted by Team H06 | Department of CSE | IUBAT</p>
   </div>
 </footer>
 <script src="<?= str_repeat('../', $depth ?? 0) ?>assets/js/main.js"></script>

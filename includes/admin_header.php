@@ -45,7 +45,7 @@ $icons = [
 <div class="admin-wrap">
   <aside class="sidebar" id="adminSidebar">
     <div class="sidebar-header">
-      <div class="sidebar-logo">Rx</div>
+      <div class="sidebar-logo">NP</div>
       <span class="sidebar-title">Noor Pharmacy</span>
       <button class="sidebar-toggle" id="sidebarToggle" title="Collapse">
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>

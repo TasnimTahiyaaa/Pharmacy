@@ -24,7 +24,7 @@ $currentPage = basename($_SERVER['PHP_SELF'], '.php');
 <nav class="navbar">
   <div class="navbar-inner">
     <a href="<?= str_repeat('../', $depth ?? 0) ?>index.php" class="navbar-logo">
-      <div class="logo-icon">Rx</div>
+      <div class="logo-icon">NP</div>
       <div class="logo-text">Noor <span>Pharmacy</span></div>
     </a>
 

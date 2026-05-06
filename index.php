@@ -11,10 +11,10 @@ include 'includes/header.php';
     <div>
       <div class="hero-badge">
         <span></span>
-        Trusted Since 2010 — Dhaka's Favorite Pharmacy
+        Trusted Since 2010
       </div>
       <h1>Your Health,<br><span class="gradient-text">Our Priority</span></h1>
-      <p>Noor Pharmacy brings you authentic medicines, expert guidance, and reliable home delivery — all in one place. Serving Dhaka with care for over 14 years.</p>
+      <p>Noor Pharmacy brings you authentic medicines, expert guidance, and reliable home delivery — all in one place.</p>
       <div class="hero-ctas">
         <a href="medicines.php" class="btn btn-primary btn-lg">Browse Medicines →</a>
         <a href="#about" class="btn btn-outline btn-lg">Learn More</a>
@@ -22,7 +22,7 @@ include 'includes/header.php';
       <div class="hero-checks">
         <span class="hero-check"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Authentic Medicines</span>
         <span class="hero-check"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Licensed Pharmacists</span>
-        <span class="hero-check"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Free Delivery</span>
+        <span class="hero-check"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> All Over Delivery</span>
       </div>
     </div>
     <div class="hero-visual">

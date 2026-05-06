@@ -48,32 +48,6 @@ include 'includes/header.php';
       <p>Sign in to your Noor Pharmacy account</p>
     </div>
 
-    <!-- Quick login cards -->
-    <div class="quick-login-cards">
-      <button type="button" class="quick-card" data-email="admin@noorpharmacy.com" data-pass="admin123">
-        <div class="quick-card-header">
-          <div class="quick-card-icon">
-            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h4>Admin</h4>
-          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="margin-left:auto;color:var(--muted)"><polyline points="9 18 15 12 9 6"/></svg>
-        </div>
-        <p>Full access to inventory, orders, reports</p>
-        <div class="fill-hint">Click to auto-fill →</div>
-      </button>
-      <button type="button" class="quick-card" data-email="customer@test.com" data-pass="customer123">
-        <div class="quick-card-header">
-          <div class="quick-card-icon customer">
-            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-          <h4>Customer</h4>
-          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="margin-left:auto;color:var(--muted)"><polyline points="9 18 15 12 9 6"/></svg>
-        </div>
-        <p>Browse medicines, cart, order tracking</p>
-        <div class="fill-hint">Click to auto-fill →</div>
-      </button>
-    </div>
-
     <?php if ($error): ?>
     <div class="alert alert-error">
       <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
@@ -101,17 +75,6 @@ include 'includes/header.php';
     <div class="divider"><span>or</span></div>
     <p style="text-align:center;font-size:14px;color:var(--muted)">Don't have an account? <a href="register.php" style="color:var(--primary);font-weight:700">Create one</a></p>
 
-    <div class="demo-creds">
-      <p>Demo Credentials</p>
-      <div class="demo-cred-row">
-        <strong>🛡️ Admin</strong>
-        <span style="font-family:monospace;font-size:11px">admin@noorpharmacy.com / admin123</span>
-      </div>
-      <div class="demo-cred-row">
-        <strong>👤 Customer</strong>
-        <span style="font-family:monospace;font-size:11px">customer@test.com / customer123</span>
-      </div>
-    </div>
   </div>
 </div>
 
