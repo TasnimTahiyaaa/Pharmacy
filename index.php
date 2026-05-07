@@ -26,7 +26,7 @@ include 'includes/header.php';
       </div>
     </div>
     <div class="hero-visual">
-      <div class="hero-rx"><span>Rx</span></div>
+      <div class="hero-rx"><span>NP</span></div>
       <h3 style="font-size:18px;font-weight:800;margin-bottom:4px">Noor Pharmacy</h3>
       <p style="font-size:13px;color:var(--muted)">Professional Healthcare Solutions</p>
       <div class="hero-stats-grid">
@@ -49,7 +49,7 @@ include 'includes/header.php';
     <div class="stats-bar-inner">
       <div class="stat-item"><div class="value">10,000+</div><div class="label">Happy Patients</div></div>
       <div class="stat-item"><div class="value">5,000+</div><div class="label">Medicines</div></div>
-      <div class="stat-item"><div class="value">14+</div><div class="label">Years Serving</div></div>
+      <div class="stat-item"><div class="value">15+</div><div class="label">Years Serving</div></div>
       <div class="stat-item"><div class="value">4.9</div><div class="label">Customer Rating</div></div>
     </div>
   </div>
@@ -65,7 +65,7 @@ include 'includes/header.php';
     </div>
     <div class="grid-4">
       <?php $services = [
-        ['icon'=>'M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11a2 2 0 012 2v3m-2 9a2 2 0 002 2h4a2 2 0 002-2v-6a2 2 0 00-2-2h-4a2 2 0 00-2 2v6z','title'=>'Home Delivery','desc'=>'Fast and reliable delivery to your doorstep within Dhaka city.'],
+        ['icon'=>'M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11a2 2 0 012 2v3m-2 9a2 2 0 002 2h4a2 2 0 002-2v-6a2 2 0 00-2-2h-4a2 2 0 00-2 2v6z','title'=>'Home Delivery','desc'=>'Fast and reliable delivery to your doorstep.'],
         ['icon'=>'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z','title'=>'24/7 Emergency','desc'=>'Emergency medicines available round the clock for urgent needs.'],
         ['icon'=>'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z','title'=>'Authentic Products','desc'=>'All medicines sourced directly from certified manufacturers.'],
         ['icon'=>'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z','title'=>'Expert Consultation','desc'=>'Speak with our licensed pharmacists for professional advice.'],
@@ -194,9 +194,9 @@ include 'includes/header.php';
         <h2 style="font-size:28px;font-weight:800;margin:8px 0 24px">Visit or Contact Us</h2>
         <div style="display:flex;flex-direction:column;gap:12px">
           <?php $contacts = [
-            ['icon'=>'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z','label'=>'Address','val'=>'123 Health Street, Dhaka 1000, Bangladesh'],
-            ['icon'=>'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z','label'=>'Phone','val'=>'+880 1700-000000'],
-            ['icon'=>'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z','label'=>'Hours','val'=>'Sat–Thu: 8AM–10PM | Fri: 2PM–10PM'],
+            ['icon'=>'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z','label'=>'Address','val'=>' Tistar Gate, Tongi, Gazipur'],
+            ['icon'=>'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z','label'=>'Phone','val'=>'+8801934331367'],
+            ['icon'=>'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z','label'=>'Hours','val'=>'Sat–Fri: 8AM–11PM'],
           ]; foreach ($contacts as $c): ?>
           <div class="contact-card">
             <div class="contact-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="<?= $c['icon'] ?>"/></svg></div>
@@ -205,15 +205,7 @@ include 'includes/header.php';
           <?php endforeach; ?>
         </div>
       </div>
-      <div class="newsletter-box">
-        <h3>Stay Informed</h3>
-        <p>Subscribe to our newsletter for health tips, discounts, and medicine updates.</p>
-        <div class="newsletter-input-row">
-          <input type="email" placeholder="Your email address">
-          <button>Subscribe</button>
-        </div>
-        <p style="font-size:12px;color:rgba(255,255,255,.5);margin-top:10px">No spam. Unsubscribe anytime.</p>
-      </div>
+      
     </div>
   </div>
 </section>

@@ -43,15 +43,45 @@ include 'includes/header.php';
   </div>
 
   <!-- Search & Filters -->
-  <form method="GET" id="filterForm">
-    <div class="filters-bar">
-      <div class="search-wrap" style="flex:1;min-width:220px">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-        <input type="text" name="search" class="form-control search-input" placeholder="Search medicines..." value="<?= htmlspecialchars($search) ?>" oninput="this.form.submit()">
-      </div>
-      <?php if ($categoryId): ?><input type="hidden" name="category" value="<?= $categoryId ?>"><?php endif; ?>
+<form method="GET" id="filterForm">
+  <div class="filters-bar">
+    <div class="search-wrap" style="flex:1;min-width:220px">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="M21 21l-4.35-4.35"/>
+      </svg>
+
+      <!-- FIXED SEARCH INPUT -->
+      <input 
+        type="text" 
+        id="searchInput"
+        name="search" 
+        class="form-control search-input" 
+        placeholder="Search medicines..." 
+        value="<?= htmlspecialchars($search) ?>"
+      >
     </div>
-  </form>
+
+    <?php if ($categoryId): ?>
+      <input type="hidden" name="category" value="<?= $categoryId ?>">
+    <?php endif; ?>
+  </div>
+</form>
+
+<script>
+document.getElementById('searchInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        document.getElementById('filterForm').submit();
+    }
+});
+
+document.getElementById('searchInput').addEventListener('input', function() {
+    if (this.value.trim() === '') {
+        window.location.href = 'medicines.php';
+    }
+});
+</script>
 
   <div class="cat-tabs">
     <button class="cat-tab <?= !$categoryId ? 'active' : '' ?>" data-cat="all">All</button>
@@ -117,23 +147,7 @@ include 'includes/header.php';
     </div>
     <?php endforeach; ?>
   </div>
-
-  <!-- Pagination -->
-  <?php if ($totalPages > 1): ?>
-  <div class="pagination">
-    <?php
-      $baseUrl = '?search=' . urlencode($search) . ($categoryId ? '&category=' . $categoryId : '');
-      if ($page > 1): ?>
-      <a href="<?= $baseUrl ?>&page=<?= $page-1 ?>" class="page-btn">‹</a>
-    <?php endif;
-    for ($i = max(1,$page-2); $i <= min($totalPages,$page+2); $i++): ?>
-      <a href="<?= $baseUrl ?>&page=<?= $i ?>" class="page-btn <?= $i===$page?'active':'' ?>"><?= $i ?></a>
-    <?php endfor;
-    if ($page < $totalPages): ?>
-      <a href="<?= $baseUrl ?>&page=<?= $page+1 ?>" class="page-btn">›</a>
-    <?php endif; ?>
-  </div>
-  <?php endif; ?>
-  <?php endif; ?>
+<?php endif; ?>
 </div>
+
 <?php include 'includes/footer.php'; ?>

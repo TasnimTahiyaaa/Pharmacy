@@ -43,7 +43,7 @@ include 'includes/header.php';
 <div class="auth-page">
   <div class="auth-box">
     <div class="auth-logo">
-      <div class="logo-icon" style="width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:18px;background:var(--primary);color:#fff;margin:0 auto 12px">Rx</div>
+      <div class="logo-icon" style="width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:18px;background:var(--primary);color:#fff;margin:0 auto 12px">NP</div>
       <h1>Welcome back</h1>
       <p>Sign in to your Noor Pharmacy account</p>
     </div>
