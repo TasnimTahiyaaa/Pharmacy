@@ -19,12 +19,72 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['flash']=['msg'=>'Medicine deactivated','type'=>'success']; header('Location: medicines.php'); exit;
     }
     if ($id) {
-        $stmt = $db->prepare("UPDATE medicines SET name=?,generic_name=?,description=?,category_id=?,price=?,stock_quantity=?,low_stock_threshold=?,unit=?,manufacturer=?,requires_prescription=? WHERE id=?");
-        $stmt->bind_param('sssiidissi',$name,$generic,$desc,$catId,$price,$stock,$thresh,$unit,$mfr,$rx,$id);
-    } else {
-        $stmt = $db->prepare("INSERT INTO medicines (name,generic_name,description,category_id,price,stock_quantity,low_stock_threshold,unit,manufacturer,requires_prescription,is_active) VALUES (?,?,?,?,?,?,?,?,?,?,1)");
-        $stmt->bind_param('sssiidissi',$name,$generic,$desc,$catId,$price,$stock,$thresh,$unit,$mfr,$rx);
-    }
+
+    $stmt = $db->prepare("
+        UPDATE medicines 
+        SET 
+            name=?,
+            generic_name=?,
+            description=?,
+            category_id=?,
+            price=?,
+            stock_quantity=?,
+            low_stock_threshold=?,
+            unit=?,
+            manufacturer=?,
+            requires_prescription=?
+        WHERE id=?
+    ");
+
+    $stmt->bind_param(
+        'sssidiissii',
+        $name,
+        $generic,
+        $desc,
+        $catId,
+        $price,
+        $stock,
+        $thresh,
+        $unit,
+        $mfr,
+        $rx,
+        $id
+    );
+
+} else {
+
+    $stmt = $db->prepare("
+        INSERT INTO medicines
+        (
+            name,
+            generic_name,
+            description,
+            category_id,
+            price,
+            stock_quantity,
+            low_stock_threshold,
+            unit,
+            manufacturer,
+            requires_prescription,
+            is_active
+        )
+        VALUES (?,?,?,?,?,?,?,?,?,?,1)
+    ");
+
+    $stmt->bind_param(
+        'sssidiissi',
+        $name,
+        $generic,
+        $desc,
+        $catId,
+        $price,
+        $stock,
+        $thresh,
+        $unit,
+        $mfr,
+        $rx
+    );
+}
     $stmt->execute();
     if ($id) checkLowStock($id); else { $newId=$db->insert_id; checkLowStock($newId); }
     $_SESSION['flash']=['msg'=>$id?'Medicine updated':'Medicine added','type'=>'success'];
